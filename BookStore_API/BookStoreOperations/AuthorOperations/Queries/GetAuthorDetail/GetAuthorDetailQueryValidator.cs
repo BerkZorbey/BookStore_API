@@ -6,7 +6,7 @@ namespace BookStore_API.BookStoreOperations.AuthorOperations.Queries.GetAuthorDe
     {
         public GetAuthorDetailQueryValidator()
         {
-            RuleFor(query => query.AuthorId).NotEmpty();
+            RuleFor(query => query.AuthorId).GreaterThan(0);
         }
     }
 }
