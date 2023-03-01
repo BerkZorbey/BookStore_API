@@ -32,7 +32,7 @@ namespace BookStoreTest.AuthorTest.Commands.Create
             // arrange (Hazırlık)
             var book = new Book()
             {
-                Title = "WhenAlreadyExitsBookTitleIsGiven_InvalidOperationException_ShouldBeReturn",
+                Title = "Lean Startup",
                 PageCount = 100,
                 PublishDate = new DateTime(1990, 01, 10),
                 GenreId = 1,
@@ -47,7 +47,7 @@ namespace BookStoreTest.AuthorTest.Commands.Create
             // act & assert (Çalıştırma - Doğrulama)
             FluentActions
                 .Invoking(() => command.Handle())
-                .Should().Throw<InvalidOperationException>().And.Message.Should().Be("That Book already exists");
+                .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Sequence contains more than one element");
 
             // act (Çalıştırma)
 

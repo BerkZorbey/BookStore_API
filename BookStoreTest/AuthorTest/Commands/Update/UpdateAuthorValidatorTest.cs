@@ -26,7 +26,7 @@ namespace BookStoreTest.AuthorTest.Commands.Delete
         public void WhenAuthorIdIsInvalid_Validator_ShouldHaveError(int authorId)
         {
             // arrange
-            var model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "Kemal", Surname = "Kara", Birthday = new DateTime(2000, 11, 22) };
+            var model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "Stefan", Surname = "Zweig", Birthday = new DateTime(1881, 11, 22) };
             UpdateAuthorCommand command = new(null);
             command.Model = model;
             command.AuthorId = authorId;
@@ -63,7 +63,7 @@ namespace BookStoreTest.AuthorTest.Commands.Delete
         {
             // arrange
             UpdateAuthorCommand command = new(null);
-            command.Model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "Zeynep", Surname = "Kızılkaya", Birthday = DateTime.Now.Date };
+            command.Model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "George", Surname = "Orwell", Birthday = DateTime.Now.Date };
 
             // act
             UpdateAuthorCommandValidator validator = new();
@@ -77,7 +77,7 @@ namespace BookStoreTest.AuthorTest.Commands.Delete
         public void WhenInputsAreValid_Validator_ShouldNotHaveError()
         {
             // arrange
-            var model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "Zeynep", Surname = "Kızılkaya", Birthday = new DateTime(2000, 11, 22) };
+            var model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "Franz", Surname = "Kafka", Birthday = new DateTime(1883, 7, 3) };
             UpdateAuthorCommand updateCommand = new(null);
             updateCommand.AuthorId = 2;
             updateCommand.Model = model;

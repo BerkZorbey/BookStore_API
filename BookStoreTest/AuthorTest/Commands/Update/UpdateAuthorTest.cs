@@ -40,13 +40,13 @@ namespace BookStoreTest.AuthorTest.Commands.Delete
         {
             // arrange
             UpdateAuthorCommand command = new(context);
-            var author = new Author { Name = "Leyla", Surname = "Soylu", Birthday = new DateTime(2000, 11, 22) };
+            var author = new Author { Name = "Stefan", Surname = "Zweig", Birthday = new DateTime(1881, 11, 22) };
 
             context.Authors.Add(author);
             context.SaveChanges();
 
             command.AuthorId = author.Id;
-            UpdateAuthorCommand.UpdateAuthorModel model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "Ayşe", Surname = "Kabuk", Birthday = new DateTime(2002, 11, 22) };
+            UpdateAuthorCommand.UpdateAuthorModel model = new UpdateAuthorCommand.UpdateAuthorModel { Name = "Gülseren", Surname = "Budayıcıoğlu", Birthday = new DateTime(1947, 11, 22) };
             command.Model = model;
 
             // act
